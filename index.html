@@ -9,6 +9,11 @@
 
 <style>
 
+@font-face {
+  font-family: 'GuessWhat';
+  src: url('Guesswhat-Exceptional.woff2') format('woff2');
+}
+
 html, body{
   margin:0;
   padding:0;
@@ -91,7 +96,7 @@ button:hover{
   background-size:cover;
 }
 
-/* الخلفيات الجديدة */
+/* الخلفيات */
 .design1{
   background-image:url('https://i.imgur.com/dWiUUH1.png');
 }
@@ -118,8 +123,8 @@ button:hover{
 
   color:#269b55;
 
-  font-family:'IBM Plex Sans Arabic', sans-serif;
-  font-weight:600;
+  font-family:'GuessWhat', sans-serif;
+  font-weight:400;
   font-size:30px;
 
   text-align:center;
@@ -168,7 +173,7 @@ button:hover{
 
 </div>
 
-<!-- التصميم المخفي للتصدير -->
+<!-- التصميم المخفي -->
 <div class="hidden-container design1" id="hiddenContainer">
 
   <div class="name" id="nameDisplay">
@@ -199,7 +204,7 @@ document.querySelectorAll('.design-thumb').forEach(img => {
 
 });
 
-/* تحميل الصورة مسبقاً */
+/* تحميل الصورة */
 function preloadImage(url){
 
   return new Promise((resolve, reject) => {
@@ -218,7 +223,7 @@ function preloadImage(url){
 
 }
 
-/* ضبط حجم الخط تلقائياً */
+/* تصغير الخط تلقائياً */
 function adjustFontSize(element, maxWidth){
 
   let fontSize = 30;
@@ -232,7 +237,7 @@ function adjustFontSize(element, maxWidth){
   while(fontSize >= minFontSize){
 
     context.font =
-      `600 ${fontSize}px IBM Plex Sans Arabic`;
+      `400 ${fontSize}px GuessWhat`;
 
     const textWidth =
       context.measureText(element.textContent).width;
